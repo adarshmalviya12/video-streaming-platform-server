@@ -1,7 +1,7 @@
 const express = require("express");
+const app = express();
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const app = express();
 
 app.use(
   cors({
@@ -15,7 +15,7 @@ app.use(
     limit: "16kb",
   })
 );
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieParser());
 

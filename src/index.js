@@ -2,12 +2,12 @@ require("dotenv").config();
 const connectDB = require("./db/index.js");
 const app = require("./app.js");
 
-PORT = process.env.PORT || 3000;
+PORT = process.env.PORT || 8000;
 
 connectDB()
   .then(() => {
-    app.listen(process.env.PORT || 8000, () => {
-      console.log(`Server running on port : `, process.env.PORT);
+    app.listen(PORT || 8000, () => {
+      console.log(`Server running on port : `, PORT);
     });
     app.on("error", (error) => {
       console.log(`error: ${error}`);
