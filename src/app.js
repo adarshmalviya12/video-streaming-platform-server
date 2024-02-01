@@ -19,4 +19,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieParser());
 
+// routes
+
+const userRouter = require("./routes/user.routes");
+
+// route declarations
+
+app.use("/api/v1/users", userRouter);
+
 module.exports = app;
